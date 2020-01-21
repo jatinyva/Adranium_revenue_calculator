@@ -1,0 +1,67 @@
+<html>
+<head>
+<style>
+input[type=text] {
+      border: none;
+    width: 100%;
+    font-size: 16px;
+    font-family: monospace;
+    text-decoration: underline;
+}
+</style>
+
+
+</head>
+<title> Revenue Calculator </title>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<div class="edit">
+    <h3>Average monthly Reach</h3>
+    <input type="number" class="couple" placeholder="enter monthly avg view on content/video" id="def"></input>
+    <h3>Average click through rate</h3>
+    <input type="number" class="couple" id="xyz" placeholder="enter value in %" onblur="al()"></input>
+    <h3>Expected conversion rate</h3>
+    <input type="number" class="couple" id="abc" placeholder="enter value in %" onblur="al()"></input> 
+</div>
+    <script>
+        function al() {
+            var abc = $("#abc").val();
+            var def = $("#def").val();
+            var xyz = $("#xyz").val();
+            
+            var Revenue = def * abc / 100;
+            var conversionRateRevenue = Revenue * 10;
+
+           var Clicks = def * xyz / 100;
+           var CTRrevenue = Clicks * 5
+
+           document.getElementById("demo").value ="Estimated Revenue from CTR:- ₹ "+CTRrevenue;
+           document.getElementById("demo1").value ="Estimated Revenue from Conversion :- ₹ "+conversionRateRevenue;
+
+
+
+        }
+         
+
+    </script>
+
+
+<br>
+<br>
+<button class="button">Calculate</button>
+<br>
+<br>
+<input type="text" id="demo"></input>
+<br>
+<br>
+<input type="text" id="demo1"></input>
+
+
+
+
+</body>
+
+
+</html>
